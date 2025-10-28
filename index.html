@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List Assembly Simulator</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Linked List Assembly Simulator</h1>
+            <div class="subtitle">Visualizing x86 Assembly Linked List Operations</div>
+        </header>
+
+        <div class="simulator">
+            <div class="controls">
+                <div class="control-group">
+                    <h2>Insert Operations</h2>
+                    <input type="number" id="insertValue" placeholder="Enter value">
+                    <button onclick="insertAtBeginning()">Insert at Beginning</button>
+                    <button onclick="insertAtEnd()">Insert at End</button>
+                </div>
+
+                <div class="control-group">
+                    <h2>Delete Operation</h2>
+                    <input type="number" id="deleteValue" placeholder="Enter value to delete">
+                    <button class="delete-btn" onclick="deleteNode()">Delete Node</button>
+                </div>
+
+                <div class="control-group">
+                    <h2>Other Operations</h2>
+                    <button onclick="displayList()">Display/Traverse List</button>
+                    <button onclick="clearList()">Clear List</button>
+                    <button onclick="generateRandomList()">Generate Random List</button>
+                </div>
+
+                <div class="control-group">
+                    <h2>Current Status</h2>
+                    <div id="status" class="status">
+                        Ready to simulate linked list operations...
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization">
+                <h2>Linked List Visualization</h2>
+                <div id="listVisualization">
+                    <div class="null-pointer">List is empty [head_ptr → NULL]</div>
+                </div>
+
+                <div class="memory-view">
+                    <h3>Memory View</h3>
+                    <div id="memoryDisplay">
+                        head_ptr: 0x00000000 (NULL)
+                    </div>
+                </div>
+
+                <div class="registers">
+                    <div class="register">
+                        <div class="register-name">EAX</div>
+                        <div class="register-value" id="regEAX">0x00000000</div>
+                    </div>
+                    <div class="register">
+                        <div class="register-name">EBX</div>
+                        <div class="register-value" id="regEBX">0x00000000</div>
+                    </div>
+                    <div class="register">
+                        <div class="register-name">ECX</div>
+                        <div class="register-value" id="regECX">0x00000000</div>
+                    </div>
+                    <div class="register">
+                        <div class="register-name">EDX</div>
+                        <div class="register-value" id="regEDX">0x00000000</div>
+                    </div>
+                </div>
+
+                <div class="code-view">
+                    <h3>Current Assembly Code</h3>
+                    <pre id="currentCode">; No operation selected</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

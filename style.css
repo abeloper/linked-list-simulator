@@ -1,0 +1,230 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .simulator {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .control-group {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #4fc3f7;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+        }
+
+        input::placeholder {
+            color: #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            background: linear-gradient(45deg, #2196f3, #21cbf3);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .operation-btn {
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+        }
+
+        .delete-btn {
+            background: linear-gradient(45deg, #f44336, #d32f2f);
+        }
+
+        .visualization {
+            position: relative;
+            min-height: 400px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .memory-view {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .memory-address {
+            color: #4fc3f7;
+        }
+
+        .memory-value {
+            color: #69f0ae;
+        }
+
+        .node {
+            display: inline-flex;
+            align-items: center;
+            margin: 10px;
+            position: relative;
+        }
+
+        .node-box {
+            background: linear-gradient(45deg, #2196f3, #1976d2);
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 120px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            border: 2px solid #64b5f6;
+        }
+
+        .node-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .node-address {
+            font-size: 0.9em;
+            opacity: 0.8;
+            color: #e3f2fd;
+        }
+
+        .arrow {
+            font-size: 1.5em;
+            margin: 0 10px;
+            color: #ffd54f;
+        }
+
+        .null-pointer {
+            color: #ff6b6b;
+            font-style: italic;
+        }
+
+        .registers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .register {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .register-name {
+            color: #ffd54f;
+            font-weight: bold;
+        }
+
+        .register-value {
+            color: #69f0ae;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #4fc3f7;
+        }
+
+        .highlight {
+            background: rgba(255, 215, 0, 0.3);
+            border: 2px solid #ffd700;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { border-color: #ffd700; }
+            50% { border-color: #ff6b00; }
+            100% { border-color: #ffd700; }
+        }
+
+        .code-view {
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        .comment { color: #6a9955; }
+        .instruction { color: #dcdcaa; }
+        .register { color: #4fc3f7; }
+        .memory { color: #69f0ae; }
