@@ -181,7 +181,6 @@ linked-list-simulator/
 - **Visual pointers** - See connections form and break
 - **Register updates** - Watch CPU state change
 - **Code highlighting** - Connect visuals to code
----
 
 <div align="center">
 
